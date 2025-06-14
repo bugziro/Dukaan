@@ -1,4 +1,4 @@
-# Dukaan – Simply Local
+# Dukaan
 Repository: Dukaan
 Course: Software Engineering – SEMTZC344
 Institution: BITS Pilani WILP M.Tech Program
