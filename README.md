@@ -15,6 +15,7 @@ In today's digital economy, local vendors often struggle to compete against larg
 - Streamlining order and delivery coordination
 - Creating a connected ecosystem of customers, vendors, and delivery agents
 # Group Details
+
 | Name            | Registration No. | Email (BITS)             | Roles                   | 
 | Sinchana Shetty | 2023lm70047      | [Email here]             | Project Manager, Tester | 
 | Zishan Alam     | 2023lm70051      | [Email here]             | [Your roles here]       | 
@@ -22,14 +23,21 @@ In today's digital economy, local vendors often struggle to compete against larg
 | Saranya T       | [Enter ID]       | [Email here]             | [Your roles here]       | 
 | Helen Jenifer   | [Enter ID]       | [Email here]             | [Your roles here]       | 
 
+| Name             | Registration No. | Email              | Roles                        |
+|------------------|------------------|---------------------|-------------------------------|
+| Sinchana Shetty  | 2023lm70047      | sinchanas@wilp.bits-pilani.ac.in | Project Manager, Tester     |
+| Zishan Alam      | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
+| John Mathew      | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
+| Saranya T        | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
+| Helen Jenifer    | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
+
 ⚠️ Each member should update their registration number, BITS email ID, and selected roles from the options listed below:
 
-# Current Phase: Design & Planning
-We are currently developing the login screen UI with role-based authentication for:
-- Customer
-- Shopkeeper
-- Delivery Personnel
-Navigation logic is implemented using vanilla JavaScript with client-side routing and basic form validation.
+- User Researcher
+- Technical Analyst
+- Programmer
+- Tester
+- Project Manager
 
 
 
