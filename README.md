@@ -1,4 +1,3 @@
-Digitally empowering local shopkeepers by connecting them with customers and delivery agents through a simple web platform – built for BITS Palani's Software Engineering course.
 # Dukaan – Simply Local
 Repository: Dukaan
 Course: Software Engineering – SEMTZC344
@@ -16,20 +15,13 @@ In today's digital economy, local vendors often struggle to compete against larg
 - Creating a connected ecosystem of customers, vendors, and delivery agents
 # Group Details
 
-| Name            | Registration No. | Email (BITS)             | Roles                   | 
-| Sinchana Shetty | 2023lm70047      | [Email here]             | Project Manager, Tester | 
-| Zishan Alam     | 2023lm70051      | [Email here]             | [Your roles here]       | 
-| John Mathew     | [Enter ID]       | [Email here]             | [Your roles here]       | 
-| Saranya T       | [Enter ID]       | [Email here]             | [Your roles here]       | 
-| Helen Jenifer   | [Enter ID]       | [Email here]             | [Your roles here]       | 
-
 | Name             | Registration No. | Email              | Roles                        |
 |------------------|------------------|---------------------|-------------------------------|
-| Sinchana Shetty  | 2023lm70047      | sinchanas@wilp.bits-pilani.ac.in | Project Manager, Tester     |
-| Zishan Alam      | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
-| John Mathew      | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
-| Saranya T        | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
-| Helen Jenifer    | [Enter ID]       | [Enter Email]       | [Enter Roles]                |
+| Sinchana Shetty  | 2023lm70047      | sinchanas@wilp.bits-pilani.ac.in | Project Manager & Tester  |
+| Zishan Alam      | 2023lm70051      | [Enter Email]       | Programer, Tester            |
+| John Mathew      | 2023lm70050      | [Enter Email]       | [Enter Roles]                 |
+| Saranya T        | 2023lm70049      | [Enter Email]       | [Enter Roles]                 |
+| Helen Jenifer    | 2023lm70048      | [Enter Email]       | [Enter Roles]                 |
 
 ⚠️ Each member should update their registration number, BITS email ID, and selected roles from the options listed below:
 
