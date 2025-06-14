@@ -20,7 +20,7 @@ In today's digital economy, local vendors often struggle to compete against larg
 | Sinchana Shetty  | 2023lm70047      | sinchanas@wilp.bits-pilani.ac.in | Project Manager & Tester  |
 | Zishan Alam      | 2023lm70051      | [Enter Email]       | Programer, Tester            |
 | John Mathew      | 2023lm70050      | [Enter Email]       | [Enter Roles]                 |
-| Saranya T        | 2023lm70049      | 2023lm70049@wilp.bits-pilani.ac.in | Tester           |
+| Saranya T        | 2023lm70049      | 2023lm70049@wilp.bits-pilani.ac.in | User researcher, Technical Analyst     |
 | Helen Jenifer    | 2023lm70048      | [Enter Email]       | [Enter Roles]                 |
 
 ⚠️ Each member should update their registration number, BITS email ID, and selected roles from the options listed below:
