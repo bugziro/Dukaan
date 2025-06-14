@@ -15,12 +15,13 @@ In today's digital economy, local vendors often struggle to compete against larg
 - Creating a connected ecosystem of customers, vendors, and delivery agents
 # Group Details
 
+
 | Name             | Registration No. | Email              | Roles                        |
 |------------------|------------------|---------------------|-------------------------------|
-| Sinchana Shetty  | 2023lm70047      | sinchanas@wilp.bits-pilani.ac.in | Project Manager & Tester  |
-| Zishan Alam      | 2023lm70051      | [Enter Email]       | Programer, Tester            |
-| John Mathew      | 2023lm70050      | [Enter Email]       | [Enter Roles]                 |
-| Saranya T        | 2023lm70049      | 2023lm70049@wilp.bits-pilani.ac.in | User researcher, Technical Analyst     |
+| Zishan Alam      | 2023lm70051      |  2023lm70051@wilp.bits-pilani.ac.in | Project Manager & Tester  |
+| Sinchana Shetty  | 2023lm70047      |  2023lm70047@wilp.bits-pilani.ac.in | Programer, Tester            |
+| John Mathew      | 2023lm70050      | [Enter Email]       | Technical Analyst, Programer |
+| Saranya T        | 2023lm70049      | 2023lm70049@wilp.bits-pilani.ac.in | Scrum Master, User researcher     |
 | Helen Jenifer    | 2023lm70048      | [Enter Email]       | [Enter Roles]                 |
 
 ⚠️ Each member should update their registration number, BITS email ID, and selected roles from the options listed below:
