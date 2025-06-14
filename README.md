@@ -1,9 +1,9 @@
 # Dukaan
-Repository: Dukaan
-Course: Software Engineering – SEMTZC344
-Institution: BITS Pilani WILP M.Tech Program
-Section: A
-Group Number: [09]
+- Repository: Dukaan
+- Course: Software Engineering – SEMTZC344
+- Institution: BITS Pilani WILP M.Tech Program
+- Section: A
+- Group Number: [09]
 # Project Overview
 Dukaan is a simple, user-friendly web platform that connects local shopkeepers, customers, and delivery personnel in a seamless shopping experience. It brings the local marketplace online, allowing small businesses to digitize their stores, reach nearby customers, and enable fast and reliable deliveries.
 This platform is developed as part of the Software Engineering course and serves as a capstone application for applying real-world software development methodologies
