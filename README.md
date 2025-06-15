@@ -20,7 +20,7 @@ In today's digital economy, local vendors often struggle to compete against larg
 |------------------|------------------|---------------------|-------------------------------|
 | Zishan Alam      | 2023lm70051      |  2023lm70051@wilp.bits-pilani.ac.in | Project Manager & Tester  |
 | Sinchana Shetty  | 2023lm70047      |  2023lm70047@wilp.bits-pilani.ac.in | Programer, Tester            |
-| John Mathew      | 2023lm70050      | [Enter Email]       | Technical Analyst, Programer |
+| John Mathew      | 2023lm70050      | 2023lm70050@wilp.bits-pilani.ac.in  | Technical Analyst, Programer |
 | Saranya T        | 2023lm70049      | 2023lm70049@wilp.bits-pilani.ac.in | Scrum Master, User researcher     |
 | Helen Jenifer    | 2023lm70048      | [Enter Email]       | [Enter Roles]                 |
 
