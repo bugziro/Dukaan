@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory | Dukaan</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f4f6f9;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar img {
+      width: 120px;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px;
+      background-color: #f4f6f9;
+      overflow-y: auto;
+    }
+
+    .main-content h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .add-product-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .add-product-btn:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+      color: #333;
+    }
+
+    th {
+      background-color: #f3f3f3;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tr:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 300px;
+    }
+
+    .edit-btn {
+      background-color: #ffc107;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .edit-btn:hover {
+      background-color: #e0a800;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const logoutLink = document.querySelector('a[href="../index.html"]');
+      logoutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const popup = document.createElement('div');
+        popup.innerHTML = `
+          <div class="popup-overlay">
+            <div class="popup-box">
+              <h2>Logout Successful!</h2>
+              <p>See you again soon.</p>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(popup);
+        setTimeout(() => {
+          popup.remove();
+          window.location.href = '../index.html';
+        }, 2000);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="../assets/logo.png" alt="Dukaan Logo" />
+    <h2>Shopkeeper</h2>
+    <a href="profile.html">👤 Profile</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="inventory.html">📦 Inventory</a>
+    <a href="orders.html">📋 Orders to Prepare</a>
+    <a href="payments.html">💰 Payment Notifications</a>
+    <a href="../index.html">🚪 Logout</a>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <h2>Inventory Overview</h2>
+      <a href="add-product.html" class="add-product-btn">➕ Add Product</a>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="Search product..." />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Aashirvaad Atta</td>
+          <td>25</td>
+          <td>Kgs</td>
+          <td>Grocery</td>
+          <td>₹320</td>
+          <td>In Stock</td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+        <tr>
+          <td>Amul Butter</td>
+          <td>10</td>
+          <td>Packs</td>
+          <td>Dairy</td>
+          <td>₹55</td>
+          <td>Low Stock</td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+        <tr>
+          <td>Parle-G Biscuits</td>
+          <td>0</td>
+          <td>Packets</td>
+          <td>Snacks</td>
+          <td>₹10</td>
+          <td>Out of Stock</td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+        <tr>
+          <td>Colgate Toothpaste</td>
+          <td>30</td>
+          <td>Tubes</td>
+          <td>Personal Care</td>
+          <td>₹50</td>
+          <td>In Stock</td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

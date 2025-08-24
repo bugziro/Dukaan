@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nearby Shops | Dukaan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fff8;
+      color: #333;
+      display: flex;
+    }
+
+    .side-nav {
+      width: 220px;
+      background-color: #004d26;
+      height: 100vh;
+      padding-top: 2rem;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: background 0.3s;
+    }
+
+    .side-nav a:hover {
+      background-color: #006633;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .top-bar {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+    }
+
+    .top-bar input[type="text"], .top-bar select {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .top-bar select {
+      width: 200px;
+    }
+
+    .shop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .shop-card {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .shop-card h3 {
+      margin: 0.2rem 0;
+    }
+
+    .shop-card p {
+      color: #555;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+ <div class="side-nav">
+  <a href="customers-home.html">🏠 Home</a>
+  <a href="customer-favourites.html">❤️ Favourites</a>
+  <a href="customers-compare-price.html">📊 Compare Prices</a>
+  <a href="customer-orders.html">📦 Orders</a>
+  <a href="customer-cart.html">🛒 Cart</a>
+  <a href="customer-profile.html">👤 Profile</a>
+<a href="../index.html">🚪 Logout</a>
+</div>
+
+
+  <div class="main-content">
+    <h1>📍 Shops Around You</h1>
+
+    <div class="top-bar">
+      <input type="text" placeholder="🔍 Search shops...">
+      <select>
+        <option value="all">All Categories</option>
+        <option value="general">General Store</option>
+        <option value="medical">Medical</option>
+        <option value="sports">Sports</option>
+        <option value="clothes">Clothes</option>
+      </select>
+      <select>
+        <option value="2">Within 2 km</option>
+        <option value="5">Within 5 km</option>
+        <option value="10">Within 10 km</option>
+      </select>
+    </div>
+
+    <div class="shop-grid">
+      <div class="shop-card">
+        <h3>Goyal General Store</h3>
+        <p>Category: General Store</p>
+        <p>Distance: 1.2 km</p>
+      </div>
+
+      <div class="shop-card">
+        <h3>MedPlus Pharmacy</h3>
+        <p>Category: Medical</p>
+        <p>Distance: 0.8 km</p>
+      </div>
+
+      <div class="shop-card">
+        <h3>Deca Sports Hub</h3>
+        <p>Category: Sports</p>
+        <p>Distance: 2.3 km</p>
+      </div>
+
+      <div class="shop-card">
+        <h3>Trendy Wear</h3>
+        <p>Category: Clothes</p>
+        <p>Distance: 3.1 km</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

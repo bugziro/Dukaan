@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favourites | Dukaan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fff5;
+      display: flex;
+    }
+
+    .side-nav {
+      width: 220px;
+      background-color: #004d26;
+      height: 100vh;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: fixed;
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: background 0.3s;
+    }
+
+    .side-nav a:hover {
+      background-color: #006633;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    h1 {
+      color: #004d26;
+    }
+
+    .favorites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .fav-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+    }
+
+    .fav-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .fav-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .fav-card button {
+      margin-top: 0.5rem;
+      background-color: #33cc66;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="side-nav">
+  <a href="customers-home.html">🏠 Home</a>
+  <a href="customer-favourites.html">❤️ Favourites</a>
+  <a href="customers-compare-price.html">📊 Compare Prices</a>
+  <a href="customer-orders.html">📦 Orders</a>
+  <a href="customer-cart.html">🛒 Cart</a>
+  <a href="customer-profile.html">👤 Profile</a>
+<a href="../index.html">🚪 Logout</a>
+</div>
+
+
+
+  <div class="main-content">
+    <h1>❤️ Your Favourites</h1>
+    <p>Quick access to your saved products and shops.</p>
+
+    <div class="favorites-grid">
+      <div class="fav-card">
+        <h3>Amul Milk (1L)</h3>
+        <p>From: Local Mart — ₹60</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="fav-card">
+        <h3>Goyal General Store</h3>
+        <p>Popular for: Grains, Oil, Spices</p>
+        <button>View Shop</button>
+      </div>
+
+      <div class="fav-card">
+        <h3>Dettol Handwash</h3>
+        <p>From: Kirana King — ₹99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

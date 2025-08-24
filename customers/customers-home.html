@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dukaan | Customer Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fff8;
+      color: #333;
+      display: flex;
+    }
+
+    .side-nav {
+      width: 220px;
+      background-color: #004d26;
+      height: 100vh;
+      padding-top: 2rem;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: background 0.3s;
+    }
+
+    .side-nav a:hover {
+      background-color: #006633;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .top-bar input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-right: 1rem;
+    }
+
+    .top-bar .cart-btn {
+      background-color: #33cc66;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .categories {
+      display: flex;
+      gap: 0.75rem;
+      overflow-x: auto;
+      padding: 1rem 0;
+    }
+
+    .categories button {
+      padding: 0.5rem 1rem;
+      background-color: #e6f7ee;
+      border: 1px solid #33cc66;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .product-list, .shop-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .product-card, .shop-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-card h4 {
+      margin: 0.2rem 0;
+    }
+
+    .product-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .product-card button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #33cc66;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .delivery-time {
+      float: right;
+      color: #28a745;
+      font-weight: bold;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-box {
+      background-color: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-box h2 {
+      color: #004d26;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="side-nav">
+    <a href="customers-home.html">🏠 Home</a>
+    <a href="customer-favourites.html">❤️ Favourites</a>
+    <a href="customers-compare-price.html">📊 Compare Prices</a>
+    <a href="customer-orders.html">📦 Orders</a>
+    <a href="customer-cart.html">🛒 Cart</a>
+    <a href="customer-profile.html">👤 Profile</a>
+    <a href="#" onclick="showLogoutPopup()">🚪 Logout</a>
+  </div>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <input type="text" placeholder="🔍 Search for products or shops..." />
+      <a href="customer-cart.html" class="cart-btn">🛒 Cart (2)</a>
+    </div>
+
+    <div class="categories">
+      <button>All</button>
+      <button>Groceries</button>
+      <button>Dairy</button>
+      <button>Snacks</button>
+      <button>Beverages</button>
+      <button>Household</button>
+    </div>
+
+    <h2>🔥 Popular Products Near You</h2>
+    <div class="product-list">
+      <div class="product-card">
+        <h4>Aashirvaad Atta (5kg)</h4>
+        <p>From: Goyal General Store <span class="delivery-time">8 mins</span></p>
+        <p>₹320</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <h4>Amul Milk (1L)</h4>
+        <p>From: Local Mart <span class="delivery-time">6 mins</span></p>
+        <p>₹60</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="product-card">
+        <h4>Lays Chips</h4>
+        <p>From: Kirana King <span class="delivery-time">5 mins</span></p>
+        <p>₹20</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+
+    <h2>🏪 Nearby Shops</h2>
+    <div class="shop-list">
+      <div class="shop-card">
+        <h3>Goyal General Store</h3>
+        <p>Items: Rice, Sugar, Oil, Spices</p>
+        <p>1.2 km away</p>
+      </div>
+
+      <div class="shop-card">
+        <h3>Kirana King</h3>
+        <p>Items: Atta, Snacks, Cold Drinks</p>
+        <p>0.9 km away</p>
+      </div>
+
+      <div class="shop-card">
+        <h3>Local Mart</h3>
+        <p>Items: Vegetables, Fruits, Dairy</p>
+        <p>1.5 km away</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showLogoutPopup() {
+      const existing = document.querySelector('.popup-overlay');
+      if (existing) existing.remove();
+
+      const popup = document.createElement('div');
+      popup.innerHTML = `
+        <div class="popup-overlay">
+          <div class="popup-box">
+            <h2>Logged Out</h2>
+            <p>Thank you for using Dukaan.</p>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(popup);
+
+      setTimeout(() => {
+        popup.remove();
+        window.location.href = '../index.html';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

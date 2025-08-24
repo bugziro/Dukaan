@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compare Prices | Dukaan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fff8;
+      color: #333;
+      display: flex;
+    }
+
+    .side-nav {
+      width: 220px;
+      background-color: #004d26;
+      height: 100vh;
+      padding-top: 2rem;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .side-nav a:hover {
+      background-color: #006633;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    .search-bar {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .search-bar button {
+      background-color: #33cc66;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .compare-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .compare-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .compare-card p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+
+    .compare-card .price {
+      font-weight: bold;
+      color: #28a745;
+    }
+
+    .compare-card button {
+      margin-top: 0.75rem;
+      padding: 0.5rem 1rem;
+      background-color: #33cc66;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+ <div class="side-nav">
+  <a href="customers-home.html">🏠 Home</a>
+  <a href="customer-favourites.html">❤️ Favourites</a>
+  <a href="customers-compare-price.html">📊 Compare Prices</a>
+  <a href="customer-orders.html">📦 Orders</a>
+  <a href="customer-cart.html">🛒 Cart</a>
+  <a href="customer-profile.html">👤 Profile</a>
+<a href="../index.html">🚪 Logout</a>
+</div>
+
+
+  <div class="main-content">
+    <h1>📊 Compare Prices</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search product to compare (e.g., Amul Milk)" />
+      <button>Search</button>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Amul Milk (1L)</h3>
+        <p>From: Goyal General Store</p>
+        <p class="price">₹60</p>
+        <p>1.2 km away — 🚴 7 min</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="compare-card">
+        <h3>Amul Milk (1L)</h3>
+        <p>From: Local Mart</p>
+        <p class="price">₹62</p>
+        <p>0.9 km away — 🚴 5 min</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="compare-card">
+        <h3>Amul Milk (1L)</h3>
+        <p>From: Kirana King</p>
+        <p class="price">₹59</p>
+        <p>1.5 km away — 🚴 9 min</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Product | Dukaan</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f4f6f9;
+    }
+
+    .sidebar {
+      width: 240px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar img {
+      width: 120px;
+      margin: 0 auto 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 40px;
+      background-color: #f4f6f9;
+      overflow-y: auto;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    form {
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 600px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="../assets/logo.png" alt="Dukaan Logo" />
+    <h2>Shopkeeper</h2>
+    <a href="profile.html">👤 Profile</a>
+    <a href="dashboard.html">📊 Dashboard</a>
+    <a href="inventory.html">📦 Inventory</a>
+    <a href="orders.html">📋 Orders to Prepare</a>
+    <a href="payments.html">💰 Payment Notifications</a>
+    <a href="../index.html">🚪 Logout</a>
+  </div>
+
+  <div class="main-content">
+    <h2>Add New Product</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter product name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required />
+      </div>
+
+      <div class="form-group">
+        <label for="unit">Unit</label>
+        <select id="unit" name="unit" required>
+          <option value="">Select unit</option>
+          <option value="Kgs">Kgs</option>
+          <option value="Packets">Packets</option>
+          <option value="Packs">Packs</option>
+          <option value="Tubes">Tubes</option>
+          <option value="Bottles">Bottles</option>
+          <option value="Items">Items</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" placeholder="e.g. Grocery, Dairy" required />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price (₹)</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" required />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input type="text" id="image" name="image" placeholder="Paste image URL here" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Additional Info</label>
+        <textarea id="description" name="description" rows="4" placeholder="Enter any additional details"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Add Product</button>
+    </form>
+  </div>
+</body>
+</html>

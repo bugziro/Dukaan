@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dukaan | Delivery Dashboard</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      background-color: #002b1a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #ffffff;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background-color: #003300;
+      width: 220px;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #006633;
+    }
+
+    .sidebar img {
+      width: 140px;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar button {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+
+    .main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .main h2 {
+      color: #33ff99;
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    select {
+      padding: 0.5rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .orders {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .order-card {
+      background-color: #004d26;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,102,0.3);
+    }
+
+    .order-card h4 {
+      color: #33ff99;
+      margin-bottom: 0.5rem;
+    }
+
+    .order-card p {
+      margin: 4px 0;
+    }
+
+    .order-card button {
+      margin-top: 0.75rem;
+      width: 100%;
+      background-color: #00ff66;
+      color: #002b1a;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    .popup-box {
+      background-color: #004d26;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      color: #33ff99;
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.4);
+      max-width: 90%;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="../assets/logo.png" alt="Dukaan Logo" />
+    <button onclick="window.location.href='delivery-profile.html'">👤 Profile</button>
+    <button onclick="logout()">🚪 Logout</button>
+  </div>
+
+  <div class="main">
+    <h2>Nearby Orders for Pickup</h2>
+
+    <div class="controls">
+      <select id="areaFilter">
+        <option value="">All Areas</option>
+        <option value="Koramangala">Koramangala</option>
+        <option value="HSR">HSR Layout</option>
+        <option value="Indiranagar">Indiranagar</option>
+      </select>
+
+      <select id="sortBy">
+        <option value="time">Sort by Time</option>
+        <option value="distance">Sort by Distance</option>
+      </select>
+    </div>
+
+    <div class="orders" id="ordersContainer">
+      <!-- Order cards injected by JS -->
+    </div>
+  </div>
+
+  <script>
+    const orders = [
+      {
+        id: 1,
+        store: "Fresh Mart",
+        area: "Koramangala",
+        time: "10:15 AM",
+        distance: 1.2,
+        customer: "Sanjay P",
+      },
+      {
+        id: 2,
+        store: "Green Grocers",
+        area: "HSR",
+        time: "10:05 AM",
+        distance: 2.8,
+        customer: "Anjali R",
+      },
+      {
+        id: 3,
+        store: "Dairy Delight",
+        area: "Indiranagar",
+        time: "10:20 AM",
+        distance: 3.5,
+        customer: "Mehul T",
+      },
+      {
+        id: 4,
+        store: "Local Bites",
+        area: "Koramangala",
+        time: "10:10 AM",
+        distance: 1.0,
+        customer: "Priya M",
+      },
+    ];
+
+    function renderOrders(data) {
+      const container = document.getElementById('ordersContainer');
+      container.innerHTML = '';
+
+      if (data.length === 0) {
+        container.innerHTML = `<p>No orders found.</p>`;
+        return;
+      }
+
+      data.forEach(order => {
+        const card = document.createElement('div');
+        card.className = 'order-card';
+        card.innerHTML = `
+          <h4>${order.store}</h4>
+          <p><strong>Area:</strong> ${order.area}</p>
+          <p><strong>Customer:</strong> ${order.customer}</p>
+          <p><strong>Time:</strong> ${order.time}</p>
+          <p><strong>Distance:</strong> ${order.distance} km</p>
+          <button onclick="acceptOrder(${order.id})">✅ Accept Pickup</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      const area = document.getElementById('areaFilter').value;
+      const sortBy = document.getElementById('sortBy').value;
+
+      let filtered = [...orders];
+
+      if (area) {
+        filtered = filtered.filter(o => o.area === area);
+      }
+
+      if (sortBy === 'time') {
+        filtered.sort((a, b) => a.time.localeCompare(b.time));
+      } else if (sortBy === 'distance') {
+        filtered.sort((a, b) => a.distance - b.distance);
+      }
+
+      renderOrders(filtered);
+    }
+
+    function acceptOrder(id) {
+      const order = orders.find(o => o.id === id);
+      showPopup('Pickup Confirmed', `You have accepted pickup from ${order.store}.`, 'success');
+    }
+
+    function logout() {
+      showPopup('Logged Out', 'You have been logged out successfully.', 'success');
+      setTimeout(() => {
+        window.location.href = '../index.html';
+      }, 2000);
+    }
+
+    function showPopup(title, message, type = 'info') {
+      const existing = document.querySelector('.popup-overlay');
+      if (existing) existing.remove();
+
+      const popup = document.createElement('div');
+      popup.innerHTML = `
+        <div class="popup-overlay">
+          <div class="popup-box">
+            <h2>${title}</h2>
+            <p>${message}</p>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(popup);
+
+      setTimeout(() => {
+        popup.remove();
+      }, type === 'success' ? 2000 : 2500);
+    }
+
+    document.getElementById('areaFilter').addEventListener('change', applyFilters);
+    document.getElementById('sortBy').addEventListener('change', applyFilters);
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderOrders(orders);
+      showPopup('Login Successful!', 'Welcome Delivery Partner!', 'success');
+    });
+  </script>
+</body>
+</html>

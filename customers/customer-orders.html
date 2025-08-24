@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Orders | Dukaan</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #f8fff8;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      color: #004d26;
+      margin-bottom: 1rem;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .filter-tabs button {
+      padding: 0.5rem 1rem;
+      background: #e6f7ee;
+      border: 1px solid #33cc66;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .order-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .order-card {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      border-left: 6px solid #33cc66;
+    }
+
+    .order-card h3 {
+      margin-top: 0;
+    }
+
+    .order-info {
+      font-size: 0.9rem;
+      margin: 0.5rem 0;
+    }
+
+    .status-chip {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: white;
+      margin-top: 0.5rem;
+    }
+
+    .delivered { background-color: #28a745; }
+    .cancelled { background-color: #dc3545; }
+    .out-for-delivery { background-color: #ffc107; color: #333; }
+
+    .order-actions {
+      margin-top: 1rem;
+    }
+
+    .order-actions button {
+      background-color: #33cc66;
+      color: white;
+      padding: 0.4rem 0.9rem;
+      margin-right: 0.5rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .order-actions button:hover {
+      background-color: #28a745;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>📦 My Orders</h1>
+
+  <div class="filter-tabs">
+    <button>All</button>
+    <button>Current</button>
+    <button>Past</button>
+  </div>
+
+  <div class="order-list">
+
+    <div class="order-card">
+      <h3>Order #1024</h3>
+      <p class="order-info">Placed on: June 6, 2025 | Amount: ₹180</p>
+      <p class="order-info">Items: Amul Milk ×1, Bread ×2</p>
+      <span class="status-chip out-for-delivery">Out for Delivery</span>
+      <div class="order-actions">
+        <button onclick="location.href='customer-track-order.html'">Track Order</button>
+        <button>Contact Support</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <h3>Order #1023</h3>
+      <p class="order-info">Delivered on: June 4, 2025 | Amount: ₹380</p>
+      <p class="order-info">Items: Aashirvaad Atta, Maggi, Lays Chips</p>
+      <span class="status-chip delivered">Delivered</span>
+      <div class="order-actions">
+        <button>Reorder</button>
+        <button>Rate Order</button>
+      </div>
+    </div>
+
+    <div class="order-card">
+      <h3>Order #1022</h3>
+      <p class="order-info">Cancelled on: June 2, 2025 | Amount: ₹240</p>
+      <p class="order-info">Items: Toned Milk, Parle-G</p>
+      <span class="status-chip cancelled">Cancelled</span>
+      <div class="order-actions">
+        <button>Reorder</button>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

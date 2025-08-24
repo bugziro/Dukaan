@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cart | Dukaan</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      background-color: #f9fff9;
+    }
+
+    .side-nav {
+      width: 220px;
+      background-color: #004d26;
+      height: 100vh;
+      padding-top: 2rem;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      transition: background 0.3s;
+    }
+
+    .side-nav a:hover {
+      background-color: #006633;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cart-items {
+      margin-bottom: 2rem;
+    }
+
+    .cart-item {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-item div {
+      flex: 1;
+    }
+
+    .cart-item .name {
+      font-weight: 600;
+    }
+
+    .cart-item .remove {
+      background: none;
+      border: none;
+      color: red;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .checkout {
+      text-align: right;
+    }
+
+    .checkout button {
+      background-color: #33cc66;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .recommendations {
+      margin-top: 3rem;
+    }
+
+    .recommendations h3 {
+      margin-bottom: 1rem;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-card button {
+      margin-top: 0.5rem;
+      padding: 0.4rem 1rem;
+      background-color: #33cc66;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="side-nav">
+  <a href="customers-home.html">🏠 Home</a>
+  <a href="customer-favourites.html">❤️ Favourites</a>
+  <a href="customers-compare-price.html">📊 Compare Prices</a>
+  <a href="customer-orders.html">📦 Orders</a>
+  <a href="customer-cart.html">🛒 Cart</a>
+  <a href="customer-profile.html">👤 Profile</a>
+<a href="../index.html">🚪 Logout</a>
+</div>
+
+
+
+  <div class="main-content">
+    <h2>🛒 My Cart</h2>
+    <div class="cart-items">
+      <div class="cart-item">
+        <div>
+          <div class="name">Amul Milk (1L)</div>
+          <div>From: Local Mart | ₹60</div>
+        </div>
+        <button class="remove">Remove</button>
+      </div>
+
+      <div class="cart-item">
+        <div>
+          <div class="name">Aashirvaad Atta (5kg)</div>
+          <div>From: Goyal General Store | ₹320</div>
+        </div>
+        <button class="remove">Remove</button>
+      </div>
+    </div>
+
+    <div class="checkout">
+        <a href="customers-checkout.html">
+            <button>Proceed to Checkout (₹380)</button>
+        </a>
+    </div>
+
+    <div class="recommendations">
+      <h3>✨ Recommended Products</h3>
+      <div class="product-list">
+        <div class="product-card">
+          <h4>Surf Excel Detergent</h4>
+          <p>₹95</p>
+          <button>Add</button>
+        </div>
+        <div class="product-card">
+          <h4>Good Day Biscuits</h4>
+          <p>₹30</p>
+          <button>Add</button>
+        </div>
+        <div class="product-card">
+          <h4>Coca Cola (750ml)</h4>
+          <p>₹45</p>
+          <button>Add</button>
+        </div>
+        <div class="product-card">
+          <h4>Maggi Noodles Pack</h4>
+          <p>₹14</p>
+          <button>Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
